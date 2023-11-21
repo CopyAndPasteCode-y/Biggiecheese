@@ -1,0 +1,69 @@
+# This program uses a Computer class that details 3 computer systems.
+#Declare Classs
+class Computer:
+
+    #Init variables
+    def __init__(self,Make,Model,CPU,Memory,SSD,Price):
+        self.Make = Make
+        self.Model = Model
+        self.CPU = CPU
+        self.Memory = Memory
+        self.SSD = SSD
+        self.Price = Price
+    #Str for output
+    def __str__(self):
+        return (f' Make: {self.Make} \n Model: {self.Model} \n CPU: {self.CPU} \n SSD:{self.SSD} \n Price: {self.Price} \n \n ')
+    #Less than to determine best price
+    def __lt__(self,Other):
+        if self.Price > Other.Price:
+            return True
+        elif self.Price < Other.Price:
+            return False
+
+    #Greater than to determine best memory
+    def __gt__(self,Other):
+        if self.Memory > Other.Memory:
+            return True
+        elif self.Memory < Other.Memory:
+            return False
+
+            
+    
+#Values to put into our class each value is a different computer build
+Computer1 = Computer('Acer ', 'Aspire TC Desktop ', 'i5-12400', 16, 512, 725.00)
+
+Computer2 = Computer('Dell', 'Inspiron 3910', 'i5-12400', 12, 256, 749.99)
+
+Computer3 = Computer('HP', 'Pavilion TP01-3050', 'i5-12400', 8, 512, 649.99)
+
+#Prints the class and has the computer go through the program
+print(Computer1)
+print(Computer2)
+print(Computer3)
+
+
+#Determines which pc cost the less if values were changed some text may be wrong but overall should determine which pc is the most cost efficient
+if Computer1.Price < Computer2.Price and Computer1.Price < Computer3.Price:
+    print(f'The following computer is the best choice based on PRICE: \n Make: Acer \n Model: ASPIRE TC DESKTOP \n CPU: I5-12400 \n Memory: 16 \n SSD: 512 \n Price: 725.99 \n \n')
+elif Computer2.Price < Computer1.Price and Computer2.Price < Computer3.Price:
+    print(f'The following computer is the best choice based on PRICE: \n Make: Dell \n Model: Inspiron 3910 \n CPU: I5-12400 \n Memory: 12 \n SSD: 256 \n Price: 749.99 \n \n')
+elif Computer3.Price < Computer1.Price and Computer3.Price < Computer2.Price:
+    print(f'The following computer is the best choice based on PRICE: \n Make: HP \n Model: Paviolion TP01-3050 \n CPU: I5-12400 \n Memory: 8 \n SSD: 512 \n Price: 649.99 \n \n')
+
+#Determines which pc has  the greatest memory if values were changed some text may be wrong but overall should determine which pc is the most memory efficient
+
+if Computer1.Memory > Computer2.Memory and Computer1.Memory > Computer3.Memory:
+    print(f'The following computer is the best choice based on Memory: \n Make: Acer \n Model: ASPIRE TC DESKTOP \n CPU: I5-12400 \n Memory: 16 \n SSD: 512 \n Price: 725.99 \n \n')
+elif Computer2.Memory > Computer1.Memory and Computer2.Memory > Computer3.Memory:
+    print(f'The following computer is the best choice based on Memory: \n Make: Dell \n Model: Inspiron 3910 \n CPU: I5-12400 \n Memory: 12 \n SSD: 256 \n Price: 749.99 \n \n')
+elif Computer3.Memory > Computer1.Memory and Computer3.Memory > Computer2.Memory:
+    print(f'The following computer is the best choice based on Memory: \n Make: HP \n Model: Paviolion TP01-3050 \n CPU: I5-12400 \n Memory: 8 \n SSD: 512 \n Price: 649.99 \n \n')
+
+
+
+
+#Cody Metzger
+#Chap 9 Homwork
+#11/21/2023
+#This program compares computer memory and prices using classse
+#Developed with IDLE
